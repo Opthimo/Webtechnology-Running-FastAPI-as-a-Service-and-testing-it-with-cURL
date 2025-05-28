@@ -196,17 +196,23 @@ Expected:
 
 1. What does the `Restart=always` directive ensure in your systemd service?
 
-?
+Ensures systemd automatically restarts the service if it crashes or stops unexpectedly, 
+providing high availability.
 
 2. How is a user-level service different from a system-level service in `systemd`?
 
-user-level service depends on a user. system-level service runs in the background of every user.
+User-level services run under a specific user's context and start when that user logs in.
+system-level services run as root and start at boot regardless of user sessions.
 
 3. Why should you always use absolute paths in systemd unit files?
 
-
+systemd runs in a minimal environment without normal PATH variables, ensures exact binary location is known.
 
 4. In what ways is `curl` useful for testing RESTful APIs?
+
+Provides command-line HTTP requests for quick endpoint testing, 
+supports various HTTP methods/headers, scriptable for automation, 
+and doesn't require GUI tools.
 
 Easy to use, fast and you see the raw data.
 
